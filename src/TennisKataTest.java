@@ -63,10 +63,50 @@ public class TennisKataTest {
     }
 
     @Test
+    public void testPlayersAreDeuce() {
+        createScore(4, 4);
+        String score = game.getScore();
+        assertEquals("Deuce", score);
+        System.out.println(score);
+    }
+
+    @Test
+    public void testPlayerTwoAdvantage() {
+        createScore(4, 5);
+        String score = game.getScore();
+        assertEquals("Advantage Player 2", score);
+        System.out.println(score);
+    }
+
+    @Test
+    public void testPlayerOneAdvantage() {
+        createScore(5, 4);
+        String score = game.getScore();
+        assertEquals("Advantage Player 1", score);
+        System.out.println(score);
+    }
+
+    @Test
     public void testPlayerTwoWins() {
         createScore(2, 4);
         String score = game.getScore();
         assertEquals("Player 2 wins", score);
+        System.out.println(score);
+    }
+
+    @Test
+    public void testPlayerTwoWinsAfterAdvantage() {
+        createScore(6, 8);
+        String score = game.getScore();
+        assertEquals("Player 2 wins", score);
+        System.out.println(score);
+    }
+
+    @Test
+    public void testPlayerOneWinsAfterAdvantage() {
+        createScore(8, 6);
+        String score = game.getScore();
+        assertEquals("Player 1 wins", score);
         System.out.println(score);
     }
 
