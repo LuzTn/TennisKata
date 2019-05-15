@@ -71,6 +71,14 @@ public class TennisKataTest {
     }
 
     @Test
+    public void testPlayersAreDeuce() {
+        createScore(4, 4);
+        String score = game.getScore();
+        assertEquals("Deuce", score);
+        System.out.println(score);
+    }
+
+    @Test
     public void testPlayerTwoAdvantage() {
         createScore(4, 5);
         String score = game.getScore();
