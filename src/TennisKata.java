@@ -15,22 +15,11 @@ public class TennisKata {
             return playerWithHighestScore() + " wins";
         }
 
-        if (hasAdvantage()) {
-            return "Advantage " + playerWithHighestScore();
-        }
-
-        if (isDeuce())
-            return "Deuce";
-
         if (p1Score == p2Score) {
             return "Both players: " + tennisScore(p1Score);
         }
 
         return tennisScore(p1Score) + "," + tennisScore(p2Score);
-    }
-
-    private boolean isDeuce() {
-        return p1Score >= 3 && p2Score == p1Score;
     }
 
     private String playerWithHighestScore() {
@@ -41,14 +30,6 @@ public class TennisKata {
         if ((p2Score >= 4 && p2Score >= p1Score + 2) || (p1Score >= 4 && p1Score >= p2Score + 2))
             return true;
         return false;
-    }
-
-    private boolean hasAdvantage() {
-        if ((p2Score >= 4 && p2Score == p1Score + 1) || (p1Score >= 4 && p1Score == p2Score + 1))
-            return true;
-
-        return false;
-
     }
 
     public void p1Score() {
